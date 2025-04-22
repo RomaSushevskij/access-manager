@@ -1,5 +1,7 @@
+import { AppRouter } from "./providers/app-router";
+
 function App() {
-  return <div>App</div>;
+  return <AppRouter />;
 }
 
 export default App;
