@@ -1,1 +1,1 @@
-export { RoutePath, AppRoutes } from "./routePath.ts";
+export { RoutePath, AppRoutes } from "./routePath";

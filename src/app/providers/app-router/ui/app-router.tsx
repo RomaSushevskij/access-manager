@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import CircularProgress from "@mui/material/CircularProgress";
 import Stack from "@mui/material/Stack";
 
-import { routeConfig } from "../config/routeConfig.tsx";
+import { routeConfig } from "../config/routeConfig";
 
 export const AppRouter = () => {
   const renderFallback = (

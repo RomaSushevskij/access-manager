@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 
 import { AppBar } from "./app-bar";
 import { AppMain } from "./app-main";
-import { AppSidebar } from "./app-sidebar.tsx";
+import { AppSidebar } from "./app-sidebar";
 
 export const AppLayout = ({ children }: PropsWithChildren) => {
   return (

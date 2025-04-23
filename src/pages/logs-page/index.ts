@@ -1,1 +1,1 @@
-export { LogsPage } from "./ui/logs-page.tsx";
+export { LogsPage } from "./ui/logs-page";

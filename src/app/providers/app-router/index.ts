@@ -1,1 +1,1 @@
-export { AppRouter } from "./ui/app-router.tsx";
+export { AppRouter } from "./ui/app-router";
