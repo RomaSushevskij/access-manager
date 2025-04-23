@@ -4,13 +4,20 @@ import Box from "@mui/material/Box";
 import { AppBar } from "./app-bar";
 import { AppMain } from "./app-main";
 import { AppSidebar } from "./app-sidebar";
+import { useAuthStore } from "@/features/auth";
 
 export const AppLayout = ({ children }: PropsWithChildren) => {
-  return (
-    <Box sx={{ display: "flex" }}>
-      <AppBar />
-      <AppSidebar />
-      <AppMain>{children}</AppMain>
-    </Box>
-  );
+  const isAuth = useAuthStore((state) => Boolean(state.authData));
+
+  if (isAuth) {
+    return (
+      <Box sx={{ display: "flex" }}>
+        <AppBar />
+        <AppSidebar />
+        <AppMain>{children}</AppMain>
+      </Box>
+    );
+  }
+
+  return <AppMain>{children}</AppMain>;
 };

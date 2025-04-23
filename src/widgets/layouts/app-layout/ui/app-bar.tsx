@@ -3,9 +3,10 @@ import Bar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import BadgeIcon from "@mui/icons-material/Badge";
+import Stack from "@mui/material/Stack";
 
 import { AppRoutes, RoutePath } from "@/shared/config/routeConfig";
-import Stack from "@mui/material/Stack";
+import { SignOutBtn } from "@/features/auth";
 
 export const AppBar = () => {
   const navigate = useNavigate();
@@ -31,6 +32,8 @@ export const AppBar = () => {
             {"Система управления доступом"}
           </Typography>
         </Stack>
+
+        <SignOutBtn />
       </Toolbar>
     </Bar>
   );

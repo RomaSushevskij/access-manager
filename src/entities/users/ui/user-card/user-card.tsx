@@ -23,7 +23,7 @@ export const UserCard = ({
   const { name, email } = user;
 
   return (
-    <Card>
+    <Card elevation={3}>
       <CardContent sx={{ display: "flex", flexDirection: "column" }}>
         <Typography gutterBottom variant="h6" component="h1">
           {name}

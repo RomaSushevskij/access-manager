@@ -1,7 +1,7 @@
 import { create } from "zustand";
 
 import { TUser } from "@/entities/users";
-import { mockUsers } from "./mockUsers";
+import { mockUsers } from "./mock-users";
 
 type TUsersState = {
   users: TUser[];

@@ -1,4 +1,5 @@
 export enum AppRoutes {
+  SIGN_IN = "sign_in",
   MAIN = "main",
   LOGS = "logs",
   NOT_FOUND = "not_found",
@@ -14,6 +15,7 @@ type TRoutePath = Record<AppRoutes, string> & {
 export const RoutePath: TRoutePath = {
   [AppRoutes.MAIN]: "/",
   [AppRoutes.LOGS]: "/logs",
+  [AppRoutes.SIGN_IN]: "/sign-in",
   [AppRoutes.NOT_FOUND]: "*",
 
   getPath: (route, params) => {
