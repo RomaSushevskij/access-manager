@@ -3,10 +3,14 @@ import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import { useDialogs } from "@toolpad/core/useDialogs";
 
 import { TUser, useUsersStore } from "@/entities/users";
+import { useLogsStore } from "@/entities/logs";
+import { useAuthStore } from "@/features/auth";
 
-export const DeleteUserBtn = ({ userId }: { userId: TUser["id"] }) => {
+export const DeleteUserBtn = ({ user }: { user: TUser }) => {
   const dialogs = useDialogs();
   const { deleteUser } = useUsersStore();
+  const { addLog } = useLogsStore();
+  const { authData } = useAuthStore();
 
   const handleDeleteUser = async () => {
     const isDeleteConfirmed = await dialogs.confirm(
@@ -18,8 +22,14 @@ export const DeleteUserBtn = ({ userId }: { userId: TUser["id"] }) => {
       },
     );
 
-    if (isDeleteConfirmed) {
-      deleteUser(userId);
+    if (isDeleteConfirmed && authData) {
+      deleteUser(user.id);
+
+      addLog({
+        initiatorUserName: authData.name,
+        targetUserName: user.name,
+        action: "deleteUser",
+      });
     }
   };
 

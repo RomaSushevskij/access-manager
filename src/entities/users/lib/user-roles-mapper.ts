@@ -1,4 +1,4 @@
-export const UserRolesMapper = {
+export const userRolesMapper = {
   analyst: "Аналитик",
   operator: "Оператор",
   admin: "Администратор",

@@ -6,13 +6,16 @@ import { createTheme } from "@mui/material";
 
 import App from "./App";
 import "./styles/index.css";
+import { ErrorBoundary } from "./providers/error-boundary";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
-      <AppProvider theme={createTheme({ colorSchemes: { light: true } })}>
-        <App />
-      </AppProvider>
+      <ErrorBoundary>
+        <AppProvider theme={createTheme({ colorSchemes: { light: true } })}>
+          <App />
+        </AppProvider>
+      </ErrorBoundary>
     </BrowserRouter>
   </StrictMode>,
 );

@@ -5,3 +5,5 @@ export { UserRoleSelect } from "./ui/user-role-select/user-role-select";
 export { UserAccessLevelSelect } from "./ui/user-access-level-select/user-access-level-select";
 
 export { useUsersStore } from "./model/users-store";
+export { userRolesMapper } from "./lib/user-roles-mapper";
+export { formatUserField } from "./lib/format-user-field";

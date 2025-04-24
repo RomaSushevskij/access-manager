@@ -6,13 +6,13 @@ import InputLabel from "@mui/material/InputLabel";
 
 import { TOption } from "@/shared/types/option";
 
-import { UserRolesMapper } from "../../lib/user-roles-mapper";
+import { userRolesMapper } from "../../lib/user-roles-mapper";
 import { TUser } from "../../model/types";
 
 const rolesOptions: TOption<TUser["role"]>[] = [
-  { value: "admin", label: UserRolesMapper.admin },
-  { value: "operator", label: UserRolesMapper.operator },
-  { value: "analyst", label: UserRolesMapper.analyst },
+  { value: "admin", label: userRolesMapper.admin },
+  { value: "operator", label: userRolesMapper.operator },
+  { value: "analyst", label: userRolesMapper.analyst },
 ];
 
 export const UserRoleSelect = ({

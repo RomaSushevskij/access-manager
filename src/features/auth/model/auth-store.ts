@@ -1,18 +1,21 @@
 import { create } from "zustand";
+import { v4 as uuidv4 } from "uuid";
 
 import { TUser } from "@/entities/users";
-import { mockUsers } from "@/entities/users/model/mock-users";
 
 import { authStorageManager } from "../lib/auth-slorage-manager";
 
 type TAuthState = {
   authData: TUser | null;
-  signIn: (args: { login: string; password: string }) => void;
-  signOut: () => void;
   error: string | null;
 };
 
-export const useAuthStore = create<TAuthState>((setState) => {
+type TAuthAction = {
+  signIn: (args: { login: string; password: string }) => void;
+  signOut: () => void;
+};
+
+export const useAuthStore = create<TAuthState & TAuthAction>((setState) => {
   return {
     authData: authStorageManager.getData(),
     error: null,
@@ -23,12 +26,20 @@ export const useAuthStore = create<TAuthState>((setState) => {
         return;
       }
 
-      setState({ authData: mockUsers[0], error: null });
-      authStorageManager.setData(mockUsers[0]);
+      const authData: TUser = {
+        id: uuidv4(),
+        name: "Admin",
+        email: "admin.admin@example.com",
+        role: "admin",
+        accessLevel: "5",
+      };
+
+      setState({ authData, error: null });
+      authStorageManager.setData(authData);
     },
     signOut: () => {
       setState({ authData: null });
-      authStorageManager.setData(null);
+      authStorageManager.removeData();
     },
   };
 });

@@ -1,6 +1,6 @@
-import { UserRolesMapper } from "../lib/user-roles-mapper";
+import { userRolesMapper } from "../lib/user-roles-mapper";
 
-type TUserRole = keyof typeof UserRolesMapper;
+type TUserRole = keyof typeof userRolesMapper;
 
 export type TUser = {
   id: string;
