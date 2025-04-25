@@ -6,8 +6,7 @@ import Button from "@mui/material/Button";
 import { FormEvent } from "react";
 
 import { useInput } from "@/shared/lib/hooks/use-input";
-
-import { useAuthStore } from "../model/auth-store";
+import { useAuthStore } from "@/entities/auth";
 
 export const SignInForm = () => {
   const { value: login, onChange: onLoginChange } = useInput();

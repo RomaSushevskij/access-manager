@@ -1,6 +1,6 @@
 import { TUser, UserAccessLevelSelect, useUsersStore } from "@/entities/users";
 import { useLogsStore } from "@/entities/logs";
-import { useAuthStore } from "@/features/auth";
+import { useAuthStore } from "@/entities/auth";
 
 export const EditUserAccessLevelSelect = ({ user }: { user: TUser }) => {
   const { updateUserAccessLevel } = useUsersStore();

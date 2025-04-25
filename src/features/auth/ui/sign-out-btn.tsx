@@ -2,7 +2,7 @@ import IconButton from "@mui/material/IconButton";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { useDialogs } from "@toolpad/core/useDialogs";
 
-import { useAuthStore } from "../model/auth-store";
+import { useAuthStore } from "@/entities/auth";
 
 export const SignOutBtn = () => {
   const { signOut } = useAuthStore();

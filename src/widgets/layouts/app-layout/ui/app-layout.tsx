@@ -1,10 +1,11 @@
 import { PropsWithChildren } from "react";
 import Box from "@mui/material/Box";
 
+import { useAuthStore } from "@/entities/auth";
+
 import { AppBar } from "./app-bar";
 import { AppMain } from "./app-main";
 import { AppSidebar } from "./app-sidebar";
-import { useAuthStore } from "@/features/auth";
 
 export const AppLayout = ({ children }: PropsWithChildren) => {
   const isAuth = useAuthStore((state) => Boolean(state.authData));

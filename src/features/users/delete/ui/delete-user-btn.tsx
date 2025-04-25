@@ -4,7 +4,7 @@ import { useDialogs } from "@toolpad/core/useDialogs";
 
 import { TUser, useUsersStore } from "@/entities/users";
 import { useLogsStore } from "@/entities/logs";
-import { useAuthStore } from "@/features/auth";
+import { useAuthStore } from "@/entities/auth";
 
 export const DeleteUserBtn = ({ user }: { user: TUser }) => {
   const dialogs = useDialogs();
