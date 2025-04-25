@@ -15,12 +15,17 @@ type TAuthAction = {
   signOut: () => void;
 };
 
+const CREDENTIALS = {
+  admin: "admin",
+  password: "12345",
+};
+
 export const useAuthStore = create<TAuthState & TAuthAction>((setState) => {
   return {
     authData: authStorageManager.getData(),
     error: null,
     signIn: ({ login, password }) => {
-      if (login.trim() !== "admin" || password.trim() !== "12345") {
+      if (login.trim() !== CREDENTIALS.admin || password.trim() !== CREDENTIALS.password) {
         setState({ error: "Неправильные логин или пароль" });
 
         return;
